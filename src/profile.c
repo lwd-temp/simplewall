@@ -463,8 +463,7 @@ ULONG_PTR _app_addapplication (
 		ptr_app->original_path->buffer[0] = _r_str_upper (ptr_app->original_path->buffer[0]);
 	}
 
-	if (ptr_app->type == DATA_APP_REGULAR || ptr_app->type == DATA_APP_DEVICE || ptr_app->type == DATA_APP_NETWORK)
-		ptr_app->short_name = _r_path_getbasenamestring (&path_temp);
+	ptr_app->short_name = _r_path_getbasenamestring (&path_temp);
 
 	ptr_app->guids = _r_obj_createarray (sizeof (GUID), NULL); // initialize array
 	ptr_app->timestamp = _r_unixtime_now ();
