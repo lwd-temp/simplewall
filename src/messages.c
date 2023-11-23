@@ -2293,7 +2293,7 @@ VOID _app_command_logshow (
 			L"\""
 		);
 
-		status = _r_sys_createprocess (viewer_path->buffer, process_path->buffer, NULL, NULL);
+		status = _r_sys_createprocess (viewer_path->buffer, process_path->buffer, NULL);
 
 		if (!NT_SUCCESS (status))
 			_r_show_errormessage (hwnd, NULL, status, viewer_path->buffer, NULL, NULL);
@@ -2370,7 +2370,7 @@ VOID _app_command_logerrshow (
 		L"\""
 	);
 
-	status = _r_sys_createprocess (viewer_path->buffer, process_path->buffer, NULL, NULL);
+	status = _r_sys_createprocess (viewer_path->buffer, process_path->buffer, NULL);
 
 	if (!NT_SUCCESS (status))
 		_r_show_errormessage (hwnd, NULL, status, viewer_path->buffer, NULL, NULL);

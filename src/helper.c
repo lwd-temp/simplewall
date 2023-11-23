@@ -2040,7 +2040,7 @@ HBITMAP _app_bitmapfrompng (
 
 BOOLEAN _app_wufixenabled ()
 {
-	WCHAR file_path[MAX_PATH];
+	WCHAR file_path[256];
 	BOOLEAN is_enabled;
 
 	_r_str_printf (file_path, RTL_NUMBER_OF (file_path), L"%s\\wusvc.exe", _r_sys_getsystemdirectory ()->buffer);
@@ -2130,8 +2130,8 @@ VOID _app_wufixenable (
 {
 	SC_HANDLE hsvcmgr;
 	PR_STRING service_path;
-	WCHAR buffer1[MAX_PATH];
-	WCHAR buffer2[MAX_PATH];
+	WCHAR buffer1[256];
+	WCHAR buffer2[256];
 	ULONG_PTR app_hash;
 
 	_r_str_printf (buffer1, RTL_NUMBER_OF (buffer1), L"%s\\svchost.exe", _r_sys_getsystemdirectory ()->buffer);
